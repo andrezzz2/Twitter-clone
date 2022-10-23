@@ -1,0 +1,46 @@
+@import 'variables'
+@import 'mixins'
+
+.First-page
+    @include flex-column-center-center
+    height: 100%
+    width: 100%
+    background-color: $primary-bg-color
+    color: $primary-font-color
+
+    &-wrapper
+        @include flex-row-center-center
+        flex-direction: row-reverse
+        flex-wrap: wrap
+        width: 100%
+        
+        &-left-column
+            display: flex
+            background-image: url('https://abs.twimg.com/sticky/illustrations/lohp_1302x955.png')
+            background-position: center
+            background-repeat: no-repeat
+            flex: 1
+            min-width: 200px
+            height: 92vh
+
+            &-twitter-icon
+                width: 50%
+                height: 50%
+                max-width: 18rem
+                max-height: 18rem
+                margin: auto
+
+
+        &-right-column
+            @include flex-column-space-around-center
+            flex: 1
+            min-width: 740px
+            height: 92vh
+
+            &-twitter-icon
+                width: 2rem
+                height: 2rem
+
+    &-footer
+        min-height: 8vh
+        width: 100%

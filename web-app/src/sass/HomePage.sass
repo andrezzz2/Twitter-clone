@@ -1,0 +1,77 @@
+@import 'variables'
+@import 'mixins'
+
+
+.Home-page
+    display: flex
+    width: 100vw
+    height: 100vh
+    background-color: $primary-bg-color
+    color: $primary-font-color
+
+    .Banner
+        display: flex
+
+        &-menu
+            display: flex
+
+            .Banner-menu-icon
+                    margin: 1rem
+
+            .Icon-container
+                @include flex-row-space-between-start
+
+                .Banner-menu-icon
+                    margin: 1rem
+
+                &-label
+                    margin: 1rem
+                    font-size: $font-size-medium
+
+    &-main-content
+        @include flex-column-start-start
+        position: relative
+
+        .Sticky-header
+            @include flex-row-space-around-center
+            position: sticky
+            top: 0
+            padding: 0.5rem 0rem
+            background-color: rgba(255, 255, 255, 0.7)
+            backdrop-filter: blur(2px)
+
+            h2
+                width: 600px
+                text-align: center
+                flex: 1
+
+        &-columns
+            display: flex
+            width: 950px
+
+            .Primary-column
+                @include flex-column-start-center
+                border-left: 1px solid rgba(0,0,0,0.24)
+                border-right: 1px solid rgba(0,0,0,0.24)
+                flex:1
+
+            .Sidebar-column
+                @include flex-column-start-center
+                padding-left: 2rem
+                width: 340px
+
+                &-whats-happening
+                    img 
+                        width: calc(340px - 2rem)
+                        height: auto
+
+                &-who-follow
+                    width: calc(340px - 2rem)
+                    heigth: 400px
+
+        .Primary-column
+                @include flex-column-start-center
+                border-left: 1px solid rgba(0,0,0,0.08)
+                border-right: 1px solid rgba(0,0,0,0.08)
+                min-width: 600px
+
