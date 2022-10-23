@@ -34,9 +34,7 @@ function App() {
             },
             {
             path: "/",
-            element:<div className='App'>
-                        <HomePage/>
-                    </div>,
+            element: <HomePage/>,
             }
             
         ]);
@@ -48,9 +46,8 @@ function App() {
             },
             {
             path: "/",
-            element:<div className='App'>
-                        <FirstPage/>
-                    </div>,
+            element: <FirstPage/>
+,
             }
             
         ]);

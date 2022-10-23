@@ -2,20 +2,17 @@ import { useMediaQuery } from 'react-responsive';
 import Banner from '../components/Banner';
 import PrimaryColumn from '../components/PrimaryColumn';
 import SidebarColumn from '../components/SidebarColumn';
-import StickyHeader from '../components/StickyHeader';
 
 function HomePage () {
 
     const isSmallScreen = useMediaQuery({ query: '(max-width: 720px)' });
-    const isMediumScreen = useMediaQuery({ query: '(max-width: 1000px)' });
+    const isMediumScreen = useMediaQuery({ query: '(max-width: 1100px)' });
 
     if(isSmallScreen)
-
         return (
-            <div className='App App-flex-column'>
+            <div className='Home-page Home-page-flex-column'>
 
-                <main className='App-main-content'>
-                    <StickyHeader/>
+                <main className='Home-page-main-content'>
                     <PrimaryColumn/>
                 </main>
 
@@ -26,12 +23,11 @@ function HomePage () {
 
     if(isMediumScreen)
         return (
-            <div className='App App-flex-row'>
+            <div className='Home-page Home-page-flex-row'>
 
                 <Banner/>
 
-                <main className='App-main-content'>
-                    <StickyHeader/>
+                <main className='Home-page-main-content'>
                     <PrimaryColumn/>
                 </main>
                 
@@ -40,18 +36,14 @@ function HomePage () {
         );
     else
         return (
-            <div className='App App-flex-row'>
+            <div className='Home-page Home-page-flex-row'>
 
                 <Banner/>
 
-                <main className='App-main-content'>
-                    <StickyHeader/>
-                    <div className='App-main-content-columns'>
-                        <PrimaryColumn/>
-                        <SidebarColumn/>
-                    </div>            
+                <main className='Home-page-main-content'>
+                    <PrimaryColumn/>
+                    <SidebarColumn/>
                 </main>
-                
 
             </div>
         );

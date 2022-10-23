@@ -4,7 +4,6 @@ import { newUser, removeUser } from '../redux/features/userSlice';
 
 function LoginPage() {
     
-    const [user, setUser] = useState < null | Object > (null);
     const dispatch = useDispatch();
     
     function handleLogin(){
@@ -16,7 +15,6 @@ function LoginPage() {
 
         localStorage.setItem("x-access-token", "brpobmrbep");
         localStorage.setItem("info", JSON.stringify({name: "andre"}));
-        setUser({name: "andre"});
     }   
 
     function handleLogOut(){
@@ -24,13 +22,10 @@ function LoginPage() {
         dispatch(removeUser());
 
         localStorage.clear();
-        setUser(null);
     }  
 
     return(
         <div className='Login-page'>
-
-            <div>logged with {JSON.stringify(user)} </div>
 
             <button className='Login-page-login-button' onClick={handleLogin}>Log In</button>
 
