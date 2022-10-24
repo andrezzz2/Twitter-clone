@@ -17,7 +17,7 @@ function SidebarColumn() {
         <div className='Sidebar-column'>
 
             {isMediumOrLargeScreen &&
-                <div className='Sidebar-column-sticky-header'>
+                <div className='Sidebar-column-header Sticky-top'>
                     <div className='Search-bar'>
                         <FaSearch className='Search-bar-icon Icon-small'/>
                         <input className='Search-bar-input' placeholder="Buscar no Twitter" onFocus={turnFieldBlue}></input>

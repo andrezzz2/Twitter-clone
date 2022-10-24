@@ -7,13 +7,13 @@
 .Home-page-flex-column
     @include flex-column-start-center
 
-.Banner-flex-row
-    @include flex-row-center-center
-    width: 100%
-
 .Banner-flex-column
     @include flex-column-space-between-center
-    height: 100%
+    height: 95vh
+
+.Banner-flex-row
+    @include flex-row-center-center
+    width: 100vw
 
 .Banner-menu-flex-column
     @include flex-column-center-start
@@ -23,3 +23,19 @@
 
 .Hidden
     display: none
+
+.Sticky-top
+    position: sticky
+    top: 0
+
+.Sticky-bottom
+    position: sticky
+    bottom: 0
+
+.Fixed-top
+    position: fixed
+    top: 0
+
+.Fixed-bottom
+    position: fixed
+    bottom: 0

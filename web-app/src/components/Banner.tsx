@@ -118,7 +118,7 @@ function Banner() {
                         <label className='Icon-container-label' htmlFor='icon-mais'>Mais</label>
                     </div>
 
-                    <button className='btn-primary btn-themed btn-medium'>Tweetar</button>
+                    <button className='btn-primary btn-themed btn-banner-tweetar'>Tweetar</button>
 
                 </div>
 

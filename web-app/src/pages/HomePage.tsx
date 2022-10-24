@@ -16,7 +16,9 @@ function HomePage () {
                     <PrimaryColumn/>
                 </main>
 
-                <Banner/>
+                <div className="Fixed-bottom">
+                    <Banner/>
+                </div>
 
             </div>
         );
@@ -25,7 +27,9 @@ function HomePage () {
         return (
             <div className='Home-page Home-page-flex-row'>
 
-                <Banner/>
+                <div className="Sticky-top">
+                    <Banner/>
+                </div>
 
                 <main className='Home-page-main-content'>
                     <PrimaryColumn/>
@@ -38,7 +42,9 @@ function HomePage () {
         return (
             <div className='Home-page Home-page-flex-row'>
 
-                <Banner/>
+            <div className="Sticky-top">
+                    <Banner/>
+                </div>
 
                 <main className='Home-page-main-content'>
                     <PrimaryColumn/>

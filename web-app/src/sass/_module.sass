@@ -9,28 +9,21 @@
     margin-top: 1rem
 
 .btn-themed
-    @include theme-button($primary-btn-color)
+    background: $primary-btn-color
+    box-shadow: 0 0 1px rgba($primary-btn-color, .25)
+    color: $secondary-font-color
 
-.btn-small
-    font-size: 1rem
-    height: 2rem
-    width: 5rem
-    border-radius: 1rem
+.btn-themed-2
+    background: $secondary-btn-color
+    box-shadow: 0 0 1px rgba($secondary-btn-color, .25)
+    color: $tertiary-font-color
 
-.btn-medium
+.btn-banner-tweetar
     font-size: 1.2rem
     height: 3rem
     width: 12rem
     border-radius: 1.5rem
 
-.btn-large
-    font-size: 2rem
-    height: 5rem
-    width: 20rem
-    border-radius: 2.5rem
-
-.Span-themed
-    @include theme-span($tertiary-font-color)
 
 .Icon-small
     width: 1rem
@@ -52,6 +45,41 @@
     width: 5rem
     height: 5rem
 
+
+.Span-bold-smaller
+    color: $primary-font-color
+    font-size: $font-size-smaller
+    font-weight: 700
+
+.Span-bold-small
+    color: $primary-font-color
+    font-size: $font-size-small
+    font-weight: 700
+
+.Span-bold-normal
+    color: $primary-font-color
+    font-size: $font-size-normal
+    font-weight: 700
+
+.Span-bold-medium
+    color: $primary-font-color
+    font-size: $font-size-medium
+    font-weight: 700
+
+.Span-bold-large
+    color: $primary-font-color
+    font-size: $font-size-large
+    font-weight: 700
+
+.Span-bold-xl
+    color: $primary-font-color
+    font-size: $font-size-xl
+    font-weight: 700
+
+.Span-bold-xxl
+    color: $primary-font-color
+    font-size: $font-size-xxl
+    font-weight: 700
 
 
 

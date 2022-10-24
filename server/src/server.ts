@@ -1,6 +1,6 @@
 import path from 'path';
 import express, { Request, Response, NextFunction } from 'express';
-import 'express-async-errors';
+import {usersRouter} from './routes/usersRoutes';
 import 'dotenv/config';
 
 
@@ -20,14 +20,7 @@ app.use(express.urlencoded({extended: true}));
 // Add APIs
 //app.use('/api', BaseRouter);
 // Setup error handler
-app.use((
-  req: Request,
-  res: Response,
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  next: NextFunction,
-) => {
-  return res.status(200).json({ message: "funfando!" });
-});
+app.use('/users', usersRouter);
 
 // Setup error handler
 app.use((

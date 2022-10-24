@@ -11,6 +11,7 @@
 
     .Banner
         display: flex
+        background-color: $primary-bg-color
 
         &-menu
             display: flex
@@ -42,13 +43,11 @@
             flex:1
             min-width: 600px
 
-            &-sticky-header
+            &-header
                 display: inline-block
-                position: sticky
-                top: 0
                 padding: 1rem 1rem
                 background-color: rgba(255, 255, 255, 0.7)
-                backdrop-filter: blur(2px)         
+                backdrop-filter: blur(5px)         
                 width: 100%
                 
                 &-star
@@ -130,6 +129,9 @@
                 .Tweet-wrapper
                     @include flex-row-center-start
 
+                    &-user-icon
+                        border-radius: 50%
+
                     .Tweet-container
                         @include flex-column-start-start
 
@@ -157,12 +159,10 @@
             padding-left: 2rem
             width: calc(340px + 2rem)
 
-            &-sticky-header
-                position: sticky
-                top: 0
+            &-header
                 padding: 0.5rem 0rem
                 background-color: rgba(255, 255, 255, 0.7)
-                backdrop-filter: blur(2px)
+                backdrop-filter: blur(5px)
 
                 .Search-bar
                     @include flex-row-center-center
