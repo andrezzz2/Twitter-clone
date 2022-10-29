@@ -1,6 +1,8 @@
 @import 'variables'
 @import 'mixins'
 
+
+
 .btn-primary
     border: none
     outline: none
@@ -8,21 +10,136 @@
     cursor: pointer
     margin-top: 1rem
 
-.btn-themed
+.btn-themed-blue-white
     background: $primary-btn-color
     box-shadow: 0 0 1px rgba($primary-btn-color, .25)
     color: $secondary-font-color
+    transition: .2s
 
-.btn-themed-2
+.btn-themed-blue-white:hover
+    background-color: rgb(26,140,216)
+
+.btn-themed-white-blue
     background: $secondary-btn-color
     box-shadow: 0 0 1px rgba($secondary-btn-color, .25)
     color: $tertiary-font-color
+    transition: .2s
+
+.btn-themed-white-blue:hover
+    background-color: rgba(29, 155, 240, 0.2)
+
+.btn-themed-white-black
+    background: $secondary-btn-color
+    box-shadow: 0 0 1px rgba($secondary-btn-color, .25)
+    color: $primary-font-color
+    transition: .2s
+
+.btn-themed-white-black:hover
+    background-color: rgba(0,0,0,0.15)
+
+.btn-themed-black-white
+    background: $tertiary-btn-color
+    box-shadow: 0 0 1px rgba($tertiary-btn-color, .25)
+    color: $secondary-font-color
+    transition: .2s
+
+.btn-themed-black-white:hover
+    background: rgba(0,0,0,0.85)
+
 
 .btn-banner-tweetar
     font-size: 1.2rem
     height: 3rem
     width: 12rem
     border-radius: 1.5rem
+
+.Btn-tweetar
+    padding: .5rem 1rem
+    border-radius: 1rem
+    font-size: $font-size-small
+
+.Btn-login-subscribe-with-google
+    @include flex-row-center-center
+    width: 300px
+    border: 1px solid rgba(0,0,0,0.24)
+    border-radius: 1rem
+    padding: 0.5rem 1rem
+    transition: .2s
+
+.Btn-login-subscribe-with-google:hover
+    background-color: rgba(29, 155, 240, 0.05)
+
+.Btn-login-subscribe-with-apple
+    @include flex-row-center-center
+    width: 300px
+    border: 1px solid rgba(0,0,0,0.24)
+    border-radius: 1rem
+    padding: 0.5rem 1rem
+
+.Btn-subscribe-with-number
+    width: 300px
+    font-size: $font-size-small
+    overflow: hidden
+    white-space: nowrap
+    text-overflow: ellipsis
+    border-radius: 1rem
+    padding: 0.5rem 1rem
+    margin-bottom: 0.5rem
+
+.Btn-avancar
+    width: 300px
+    font-size: $font-size-small
+    border: 1px solid rgba(0,0,0,0.24)
+    border-radius: 1.5rem
+    padding: 0.5rem 1rem
+    margin-bottom: 0.5rem
+
+.Btn-esqueceu-a-senha
+    width: 300px
+    font-size: $font-size-small
+    border: 1px solid rgba(0,0,0,0.24)
+    border-radius: 1.5rem
+    padding: 0.5rem 1rem
+    margin-bottom: 0.5rem
+
+
+
+.Input-primary
+    border: 1px solid rgba(0,0,0,0.24)
+    border-radius: 0.2rem
+    width: 300px
+
+.Input-primary:focus
+    border: 1px solid rgba(0,0,0,0.24)
+    outline: none
+
+.Input-animated
+    @include flex-column-center-center
+    position: relative
+    margin-top: .5rem
+
+    input
+        font-size: $font-size-small
+        padding: 1.5rem .5rem .5rem .5rem
+
+    input:focus
+        border: 2px solid $primary-btn-color
+    
+    input:focus + span
+        font-size: $font-size-smaller
+        color: $tertiary-font-color
+        top: 0.2rem
+
+    span
+        font-size: $font-size-small
+        color: $quaternary-font-color
+        position: absolute
+        left: .5rem
+        top: 1rem
+        pointer-events: none
+        transition: .2s
+
+
 
 
 .Icon-small
@@ -36,6 +153,7 @@
 .Icon-large
     width: 1.8rem
     height: 1.8rem
+    background: transparent
 
 .Icon-xl
     width: 3rem
@@ -46,40 +164,203 @@
     height: 5rem
 
 
+
+
 .Span-bold-smaller
     color: $primary-font-color
     font-size: $font-size-smaller
     font-weight: 700
+    margin: 0 0.5rem
 
 .Span-bold-small
     color: $primary-font-color
     font-size: $font-size-small
     font-weight: 700
+    margin: 0 0.5rem
 
 .Span-bold-normal
     color: $primary-font-color
     font-size: $font-size-normal
     font-weight: 700
+    margin: 0 0.5rem
 
 .Span-bold-medium
     color: $primary-font-color
     font-size: $font-size-medium
     font-weight: 700
+    margin: 0 0.5rem
 
 .Span-bold-large
     color: $primary-font-color
     font-size: $font-size-large
     font-weight: 700
+    margin: 0 0.5rem
 
 .Span-bold-xl
     color: $primary-font-color
     font-size: $font-size-xl
     font-weight: 700
+    margin: 0 0.5rem
 
 .Span-bold-xxl
     color: $primary-font-color
     font-size: $font-size-xxl
     font-weight: 700
+    margin: 0 0.5rem
+
+.Span-medium-smaller
+    color: $primary-font-color
+    font-size: $font-size-smaller
+    font-weight: 500
+    margin: 0 0.5rem
+
+.Span-medium-small
+    color: $primary-font-color
+    font-size: $font-size-small
+    font-weight: 500
+    margin: 0 0.5rem
+
+.Span-medium-normal
+    color: $primary-font-color
+    font-size: $font-size-normal
+    font-weight: 500
+    margin: 0 0.5rem
+
+.Span-medium-medium
+    color: $primary-font-color
+    font-size: $font-size-medium
+    font-weight: 500
+    margin: 0 0.5rem
+
+.Span-medium-large
+    color: $primary-font-color
+    font-size: $font-size-large
+    font-weight: 500
+    margin: 0 0.5rem
+
+.Span-medium-xl
+    color: $primary-font-color
+    font-size: $font-size-xl
+    font-weight: 500
+    margin: 0 0.5rem
+
+.Span-medium-xxl
+    color: $primary-font-color
+    font-size: $font-size-xxl
+    font-weight: 500
+    margin: 0 0.5rem
+
+.Span-normal-smaller
+    color: $primary-font-color
+    font-size: $font-size-smaller
+    font-weight: 400
+    margin: 0 0.5rem
+
+.Span-normal-small
+    color: $primary-font-color
+    font-size: $font-size-small
+    font-weight: 400
+    margin: 0 0.5rem
+
+.Span-normal-normal
+    color: $primary-font-color
+    font-size: $font-size-normal
+    font-weight: 400
+    margin: 0 0.5rem
+
+.Span-normal-medium
+    color: $primary-font-color
+    font-size: $font-size-medium
+    font-weight: 400
+    margin: 0 0.5rem
+
+.Span-normal-large
+    color: $primary-font-color
+    font-size: $font-size-large
+    font-weight: 400
+    margin: 0 0.5rem
+
+.Span-normal-xl
+    color: $primary-font-color
+    font-size: $font-size-xl
+    font-weight: 400
+    margin: 0 0.5rem
+
+.Span-normal-xxl
+    color: $primary-font-color
+    font-size: $font-size-xxl
+    font-weight: 400
+    margin: 0 0.5rem
+
+.Span-lines-around  
+    margin-top: 0.5rem
+
+    span
+        display: inline-block
+
+    &-line
+        width: 45%
+        height: 0
+        border-bottom: 1px solid rgba(0,0,0,0.08)
+        margin: 3px
+
+.Span-subscribe-politics
+    font-size: $font-size-pp
+
+    a
+        color: $tertiary-font-color
+        text-decoration: none
+    
+    a:visited
+        color: $tertiary-font-color
+    
+    a:hover 
+        text-decoration: underline
+
+
+.Span-subscribe
+    font-size: $font-size-small
+    color: $quaternary-font-color
+
+    a
+        color: $tertiary-font-color
+        text-decoration: none
+    
+    a:visited
+        color: $tertiary-font-color
+    
+    a:hover 
+        text-decoration: underline
 
 
 
+
+.Login
+    @include flex-column-start-center
+    position: absolute
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0
+    margin: auto
+    width: 600px
+    height: 650px
+    background-color: $primary-bg-color
+    border-radius: 1rem
+
+    &-twitter-icon
+        margin-top: 1rem
+
+    &-container
+        @include flex-column-start-start
+        margin: 1rem 0
+        width: 300px
+
+        &-title
+            margin-bottom: 1rem
+
+        .Span-lines-around
+            width: 300px
+
+    .Span-subscribe
+        margin-top: 2rem

@@ -7,6 +7,7 @@
     width: 100%
     background-color: $primary-bg-color
     color: $primary-font-color
+    min-width: 600px
 
     &-wrapper
         @include flex-row-center-center
@@ -46,83 +47,12 @@
                 width: 100%
                 margin: 2rem 0
 
-                .Btn-subscribe-with-google
-                    @include flex-row-center-center
-                    width: 300px
-                    background-color: rgba(29, 155, 240, 0)
-                    border: 1px solid rgba(0,0,0,0.24)
-                    border-radius: 1rem
-                    padding: 0.5rem 1rem
-                    transition: 0.2s
-
-                    span
-                        margin-left: 0.5rem
-                        font-size: $font-size-small
-                        font-weight: 400
-
-                .Btn-subscribe-with-google:hover
-                    background-color: rgba(29, 155, 240, 0.05)
-
-                .Btn-subscribe-with-apple
-                    @include flex-row-center-center
-                    width: 300px
-                    background-color: rgba(0,0,0,0)
-                    border: 1px solid rgba(0,0,0,0.24)
-                    border-radius: 1rem
-                    padding: 0.5rem 1rem
-                    transition: 0.2s
-                    cursor: pointer
-                        
-                    span
-                        margin-left: 0.5rem
-                        font-size: $font-size-small
-                        font-weight: 500
-
-                .Btn-subscribe-with-apple:hover
-                    background-color: rgba(0,0,0,0.15)
-
                 .Span-lines-around  
                     width: 300px
-                    margin-top: 0.5rem
 
-                    span
-                        display: inline-block
-                
-                    &-line
-                        width: 45%
-                        height: 0
-                        border-bottom: 1px solid rgba(0,0,0,0.08)
-                        margin: 3px
-                    
-
-                .Btn-subscribe-with-number
-                    width: 300px
-                    overflow: hidden
-                    white-space: nowrap
-                    text-overflow: ellipsis
-                    border: 1px solid $primary-btn-color
-                    border-radius: 1rem
-                    font-size: $font-size-small
-                    font-weight: 500
-                    padding: 0.5rem 1rem
-                    transition: 0.2s
-                
-                .Btn-subscribe-with-number:hover
-                    background-color: rgb(26,140,216)
-
-                p
-                    font-size: $font-size-pp
+                .Span-subscribe-politics
                     width:300px
 
-                    a
-                        color: $tertiary-font-color
-                        text-decoration: none
-                    
-                    a:visited
-                        color: $tertiary-font-color
-                    
-                    a:hover 
-                        text-decoration: underline
             
             &-login-container
                 @include flex-column-center-start
@@ -137,9 +67,6 @@
                     font-size: $font-size-small
                     transition: 200ms
                 
-                .Btn-first-page-login:hover
-                    background-color: rgba(29, 155, 240, 0.2)
-            
 
     &-footer
         @include flex-row-center-center
@@ -162,7 +89,20 @@
         
         &-link:hover
             text-decoration: underline
+
+    
+    &-login-page
+        position: fixed
+        top: 0
+        z-index: 999
+        min-width: 600px
+
+        &-background
+            width: 100vw
+            height: 100vh
+            background-color: rgba(0,0,0,0.24)
             
+
 
 
 

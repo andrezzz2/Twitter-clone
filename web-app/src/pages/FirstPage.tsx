@@ -1,6 +1,17 @@
 import {FaTwitter,FaGoogle, FaApple} from 'react-icons/fa';
+import Login from '../components/Login';
 
 function FirstPage () {
+
+    function showLoginPage () {
+        const el = document.querySelector(".First-page-login-page");
+        el?.classList.remove("Hidden");
+    }
+
+    function hideLoginPage () {
+        const el = document.querySelector(".First-page-login-page");
+        el?.classList.add("Hidden");
+    }
 
     return (
         <div className='First-page'>
@@ -13,28 +24,28 @@ function FirstPage () {
                     <span className='First-page-wrapper-right-column-happening-now Span-bold-xxl'>Acontecendo agora</span>
                     <span className='Span-bold-large'>Inscreva-se no Twitter hoje mesmo.</span>
                     <div className='First-page-wrapper-right-column-subscribe-container'>
-                        <div className='btn-primary Btn-subscribe-with-google'>
+                        <div className='btn-primary Btn-login-subscribe-with-google'>
                             <FaGoogle className="Icon-small"/>
-                            <span>Inscrever-se no Google</span>
+                            <span className="Span-normal-small">Inscrever-se no Google</span>
                         </div>
-                        <div className='btn-primary Btn-subscribe-with-apple'>
-                            <FaApple className="Icon-small"/>
-                            <span>Inscrever-se com Apple</span>
+                        <div className='btn-primary btn-themed-white-black Btn-login-subscribe-with-apple'>
+                            <FaApple fill="black" className="Icon-small"/>
+                            <span className="Span-medium-small">Inscrever-se com Apple</span>
                         </div>
                         <div className='Span-lines-around'>
                             <span className='Span-lines-around-line'></span>
                             <span>or</span>
                             <span className='Span-lines-around-line'></span>
                         </div>
-                        <button className='btn-primary btn-themed Btn-subscribe-with-number'>
+                        <button className='btn-primary btn-themed-blue-white Btn-subscribe-with-number'>
                             Inscreva-se com número de celular ou e-mail
                         </button>
-                        <p>Ao se inscrever, você concorda com os <a href="/">Termos de Serviço</a> e a <a href="/">Política de Privacidade</a>, incluindo o <a href="/">Uso de Cookies</a>.</p>
+                        <span className='Span-subscribe-politics'>Ao se inscrever, você concorda com os <a href="/">Termos de Serviço</a> e a <a href="/">Política de Privacidade</a>, incluindo o <a href="/">Uso de Cookies</a>.</span>
                     </div>
                     
                     <div className="First-page-wrapper-right-column-login-container">
                         <span className='Span-bold-normal'>Já tem uma conta?</span>
-                        <button className='btn-primary btn-themed-2 Btn-first-page-login'>Entrar</button>
+                        <button className='btn-primary btn-themed-white-blue Btn-first-page-login' onClick={showLoginPage}>Entrar</button>
                         <a href="http://localhost:3000/login">login provisório</a>
                     </div>
                     
@@ -66,6 +77,12 @@ function FirstPage () {
                 <a href="/" className='First-page-footer-link'>Configurações</a>
                 <a href="/" className='First-page-footer-link'>@ 2022 Twitter, Inc.</a>
             </footer>
+
+
+            <div className='First-page-login-page Hidden'>
+                <div className='First-page-login-page-background' onClick={hideLoginPage}></div>
+                <Login/>
+            </div>
         </div>
     );
 

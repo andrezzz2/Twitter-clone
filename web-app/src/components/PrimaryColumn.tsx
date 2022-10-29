@@ -6,12 +6,11 @@ import {FaRegImage,
         FaRegCalendarAlt,
         FaMapMarkerAlt
 } from 'react-icons/fa';
-
 import { BsStars } from 'react-icons/bs';
 
 function PrimaryColumn() {
-    const isMediumOrLargeScreen = useMediaQuery({ query: '(min-width: 721px)' });
 
+    const isMediumOrLargeScreen = useMediaQuery({ query: '(min-width: 721px)' });
     
     return(
         <div className='Primary-column'>
@@ -48,7 +47,7 @@ function PrimaryColumn() {
                                 <FaRegCalendarAlt fill='rgb(29, 155, 240)' className='Icon-small'/>
                                 <FaMapMarkerAlt fill='rgb(29, 155, 240)' className='Icon-small'/>
                             </div>
-                            <button className='btn-primary btn-themed btn-small'>Tweetar</button>
+                            <button className='btn-primary btn-themed-blue-white Btn-tweetar'>Tweetar</button>
                         </div>
 
                     </div>

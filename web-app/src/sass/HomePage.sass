@@ -15,21 +15,26 @@
 
         &-menu
             display: flex
+            margin-right: 2rem
 
             .Banner-menu-icon
+                color: $primary-font-color
                 margin: 1rem
+            
 
             .Icon-container
-                @include flex-row-space-between-start
+                @include flex-row-space-between-center
                 cursor: pointer
-                padding-right: 2rem
+                border-radius: 2rem
 
                 .Banner-menu-icon
                     margin: 1rem
+                    color: $primary-font-color
 
                 &-label
-                    margin: 1rem
+                    margin: 1rem 1rem 1rem 0
                     font-size: $font-size-medium
+                    color: $primary-font-color
 
     &-main-content
         @include flex-row-center-start
