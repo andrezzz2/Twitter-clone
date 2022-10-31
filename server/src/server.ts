@@ -1,26 +1,20 @@
 import path from 'path';
 import express, { Request, Response, NextFunction } from 'express';
-import {usersRouter} from './routes/usersRoutes';
+import {userRouter} from './routes/userRoutes';
 import 'dotenv/config';
 
 
 // **** Init express **** //
-
 const app = express();
 
 
 // **** Set basic express settings **** //
-
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
 
 // **** Add API routes **** //
-
-// Add APIs
-//app.use('/api', BaseRouter);
-// Setup error handler
-app.use('/users', usersRouter);
+app.use('/user', userRouter);
 
 // Setup error handler
 app.use((
@@ -36,12 +30,9 @@ app.use((
 
 // **** Serve front-end content **** //
 
-
 // Set static directory (js and css).
 const staticDir = path.join(__dirname, 'public');
 app.use(express.static(staticDir));
 
-
-// **** Export default **** //
 
 export default app;

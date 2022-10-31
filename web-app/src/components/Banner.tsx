@@ -117,13 +117,16 @@ function Banner() {
 
                 </div>
 
-                <div className='User-avatar-container btn-themed-white-black' onClick={showOptionsFromAvatarContainer}>
-                    <img className='User-avatar-container-icon Icon-xl' 
+                <div className='User-avatar-container btn-themed-white-black'>
+                    <img className='User-avatar-container-icon Icon-xl'
                          alt='user profile pic' 
-                         src='http://cbissn.ibict.br/images/phocagallery/galeria2/thumbs/phoca_thumb_l_image03_grd.png'/>
-                    <div className='User-avatar-container-hidden-options Hidden'>
-                        <span>Adicionar uma conta existente</span>
-                        <span>Sair de {'@andrezzz'}</span>
+                         src='http://cbissn.ibict.br/images/phocagallery/galeria2/thumbs/phoca_thumb_l_image03_grd.png'
+                         onClick={showOptionsFromAvatarContainer}
+                    />
+                    <div className='User-avatar-hidden-options-screen-background Hidden' onClick={hideOptionsFromAvatarContainer}></div>
+                    <div className='User-avatar-hidden-options-screen-container Hidden'>
+                        <span className='btn-themed-transparent-black'>Adicionar uma conta existente</span>
+                        <span className='btn-themed-transparent-black' onClick={handleLogOut}>Sair de {'@andrezzz'}</span>
                     </div>
                 </div>
 
