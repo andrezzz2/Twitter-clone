@@ -29,14 +29,23 @@ function Banner() {
         localStorage.clear();
     } 
 
-    function showHiddenOptionsFromAvatarContainer () {
-        const el = document.getElementsByClassName('User-avatar-container-hidden-options');
+    function showOptionsFromAvatarContainer () {
+        const el = document.getElementsByClassName('User-avatar-hidden-options-screen-background');
         el[0].classList.remove('Hidden');
+
+        const el2 = document.getElementsByClassName('User-avatar-hidden-options-screen-container');
+        el2[0].classList.remove('Hidden');
+        el2[0].classList.add('Flex');
     }
 
     function hideOptionsFromAvatarContainer () {
-        const el = document.getElementsByClassName('User-avatar-container-hidden-options');
+        console.log("aqui")
+        const el = document.getElementsByClassName('User-avatar-hidden-options-screen-background');
         el[0].classList.add('Hidden');
+
+        const el2 = document.getElementsByClassName('User-avatar-hidden-options-screen-container');
+        el2[0].classList.remove('Flex');
+        el2[0].classList.add('Hidden');
     }
 
     const isSmallScreen = useMediaQuery({ query: '(max-width: 720px)' });
@@ -108,7 +117,7 @@ function Banner() {
 
                 </div>
 
-                <div className='User-avatar-container btn-themed-white-black' onClick={showHiddenOptionsFromAvatarContainer}>
+                <div className='User-avatar-container btn-themed-white-black' onClick={showOptionsFromAvatarContainer}>
                     <img className='User-avatar-container-icon Icon-xl' 
                          alt='user profile pic' 
                          src='http://cbissn.ibict.br/images/phocagallery/galeria2/thumbs/phoca_thumb_l_image03_grd.png'/>
@@ -123,7 +132,7 @@ function Banner() {
 
     else
         return (
-            <header className='Banner Banner-flex-column Banner-large' onClick={hideOptionsFromAvatarContainer}>
+            <header className='Banner Banner-flex-column Banner-large'>
 
                 <div className='Banner-menu Banner-menu-flex-column'>
 
@@ -175,19 +184,24 @@ function Banner() {
 
                 </div>
 
-                <div className='User-avatar-container btn-themed-white-black' onClick={showHiddenOptionsFromAvatarContainer}>
+                <div className='User-avatar-container btn-themed-white-black'>
                     <img className='User-avatar-container-icon Icon-xl'
                          alt='user profile pic' 
-                         src='http://cbissn.ibict.br/images/phocagallery/galeria2/thumbs/phoca_thumb_l_image03_grd.png'/>
-                    <div className='User-avatar-container-info'>
+                         src='http://cbissn.ibict.br/images/phocagallery/galeria2/thumbs/phoca_thumb_l_image03_grd.png'
+                         onClick={showOptionsFromAvatarContainer}
+                    />
+                    <div className='User-avatar-container-info' onClick={showOptionsFromAvatarContainer}>
                         <div className='User-avatar-container-info-name Span-medium-small'>{'André Luiz'}</div>
                         <FaLock className='Icon-small'/>
                         <div className='User-avatar-container-info-userName'>{'@andrezzz'}</div>
                     </div>
-                    <BsThreeDots className='User-avatar-container-dots Icon-small'/>
-                    <div className='User-avatar-container-hidden-options Hidden'>
-                        <span>Adicionar uma conta existente</span>
-                        <span>Sair de {'@andrezzz'}</span>
+                    <div className='User-avatar-container-dots' onClick={showOptionsFromAvatarContainer}>
+                        <BsThreeDots className='Icon-small'/>
+                    </div>
+                    <div className='User-avatar-hidden-options-screen-background Hidden' onClick={hideOptionsFromAvatarContainer}></div>
+                    <div className='User-avatar-hidden-options-screen-container Hidden'>
+                        <span className='btn-themed-transparent-black'>Adicionar uma conta existente</span>
+                        <span className='btn-themed-transparent-black' onClick={handleLogOut}>Sair de {'@andrezzz'}</span>
                     </div>
                 </div>
 

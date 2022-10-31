@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 
 import FirstPage from './pages/FirstPage';
-import LoginPage from './pages/LoginPage';
 import HomePage from './pages/HomePage';
 
 import { useSelector, useDispatch } from 'react-redux';
@@ -29,25 +28,17 @@ function App() {
     if(user.isLoggedIn)
         router = createBrowserRouter([
             {
-                path: "/login",
-                element: <LoginPage />
-            },
-            {
-            path: "/",
-            element: <HomePage/>,
+                path: "/",
+                element: <HomePage/>,
             }
             
         ]);
     else
         router = createBrowserRouter([
+
             {
-                path: "/login",
-                element: <LoginPage />
-            },
-            {
-            path: "/",
-            element: <FirstPage/>
-,
+                path: "/",
+                element: <FirstPage/>
             }
             
         ]);

@@ -524,6 +524,10 @@ h2 {
   display: none;
 }
 
+.Flex {
+  display: flex;
+}
+
 .Sticky-top {
   position: sticky;
   top: 0;
@@ -704,7 +708,9 @@ h2 {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0.7rem;
+  position: relative;
+  padding: 0.5rem 0.7rem;
+  margin-bottom: 1rem;
   border-radius: 2rem;
   cursor: pointer;
 }
@@ -726,7 +732,36 @@ h2 {
   margin-left: 0.5rem;
 }
 .Home-page .Banner .User-avatar-container-dots {
-  margin-left: 3rem;
+  padding-left: 3rem;
+}
+.Home-page .Banner .User-avatar-container .User-avatar-hidden-options-screen-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: transparent;
+  cursor: initial;
+}
+.Home-page .Banner .User-avatar-container .User-avatar-hidden-options-screen-container {
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  position: absolute;
+  top: -9.5rem;
+  left: -1rem;
+  width: 19rem;
+  height: 9rem;
+  padding: 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 1.5rem;
+  background-color: #FFFFFF;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.Home-page .Banner .User-avatar-container .User-avatar-hidden-options-screen-container span {
+  width: 100%;
+  padding: 1rem 0.5rem;
+  cursor: pointer;
 }
 .Home-page-main-content {
   display: flex;

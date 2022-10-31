@@ -46,7 +46,6 @@ function FirstPage () {
                     <div className="First-page-wrapper-right-column-login-container">
                         <span className='Span-bold-normal'>Já tem uma conta?</span>
                         <button className='btn-primary btn-themed-white-blue Btn-first-page-login' onClick={showLoginPage}>Entrar</button>
-                        <a href="http://localhost:3000/login">login provisório</a>
                     </div>
                     
                 </div>
