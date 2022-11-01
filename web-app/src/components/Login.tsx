@@ -59,7 +59,6 @@ function Login ({step, setStep}: ILoginComponent ) {
 
         if(username && password){
 
-            console.log("fazendo axios post");
             axios.post('http://localhost:5353/user/login', {username: username, password: password}).then((response)=>{
 
                 const data = response.data as ILoginResponse;
@@ -106,7 +105,11 @@ function Login ({step, setStep}: ILoginComponent ) {
                         <span className='Span-lines-around-line'></span>
                     </div>
                     <div className='Input-animated'>
-                        <input ref={firstInputRef} className='Input-primary'/>
+                        <input className='Input-primary' 
+                               type='text'
+                               required={true}
+                               ref={firstInputRef} 
+                        />
                         <span>Celular, e-mail ou nome de usuário</span>
                     </div>
                     <button className='btn-primary btn-themed-black-white Btn-avancar' onClick={goToSecondStep}>Avançar</button>
@@ -134,6 +137,8 @@ function Login ({step, setStep}: ILoginComponent ) {
                     </div>
                     <div className='Input-animated'>
                         <input className='Input-primary'
+                               type='password'
+                               required={true}
                                ref={secondInputRef}
                                onChange={event=>enablePasswordButton(event)}
                         />

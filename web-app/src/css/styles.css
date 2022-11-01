@@ -219,10 +219,11 @@ h2 {
   font-size: 1rem;
   padding: 1.5rem 0.5rem 0.5rem 0.5rem;
 }
-.Input-animated input:focus {
-  border: 2px solid rgb(29, 155, 240);
+.Input-animated input:focus, .Input-animated input:valid {
+  outline: 1px solid rgb(29, 155, 240);
+  border: 1px solid rgb(29, 155, 240);
 }
-.Input-animated input:focus + span {
+.Input-animated input:focus + span, .Input-animated input:valid + span {
   font-size: 0.9rem;
   color: rgb(29, 155, 240);
   top: 0.2rem;
@@ -539,8 +540,12 @@ h2 {
 .Login2-container .Input-animated {
   margin-top: 1rem;
 }
+.Login2-container .Input-animated span {
+  font-size: 1.2rem;
+  top: 0.8rem;
+}
 .Login2 .Span-subscribe {
-  margin: 2rem 0;
+  margin: 1rem 0 2rem 0;
 }
 
 .Home-page-flex-row {

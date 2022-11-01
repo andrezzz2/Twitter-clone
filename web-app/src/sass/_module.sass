@@ -172,10 +172,11 @@
         font-size: $font-size-small
         padding: 1.5rem .5rem .5rem .5rem
 
-    input:focus
-        border: 2px solid $primary-btn-color
+    input:focus , input:valid
+        outline: 1px solid $primary-btn-color
+        border: 1px solid $primary-btn-color
     
-    input:focus + span
+    input:focus + span, input:valid + span
         font-size: $font-size-smaller
         color: $tertiary-font-color
         top: 0.2rem
@@ -457,6 +458,9 @@
 
         .Input-animated
             margin-top: 1rem
+            span
+                font-size: $font-size-normal
+                top: 0.8rem
 
     .Span-subscribe
-        margin: 2rem 0
+        margin: 1rem 0 2rem 0
