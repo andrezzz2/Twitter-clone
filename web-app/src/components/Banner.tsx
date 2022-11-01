@@ -14,19 +14,21 @@ import {BsThreeDots
        } from 'react-icons/bs';
 
 import { useMediaQuery } from 'react-responsive';
-import { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { removeUser } from '../redux/features/userSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { removeUser, userState } from '../redux/features/userSlice';
+import { StoreState } from '../redux/store';
+
 
 function Banner() {
 
     const dispatch = useDispatch();
+    const user: userState = useSelector( (state: StoreState) => state.user );
 
     function handleLogOut () {
-        console.log("trying to log out");
-        dispatch(removeUser());
 
+        dispatch(removeUser());
         localStorage.clear();
+        
     } 
 
     function showOptionsFromAvatarContainer () {

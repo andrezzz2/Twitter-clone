@@ -136,12 +136,27 @@
     padding: 0.5rem 1rem
     margin-bottom: 0.5rem
 
+.Btn-entrar
+    width: 450px
+    background: $tertiary-btn-color
+    font-size: $font-size-normal
+    color: $secondary-font-color
+    border: 1px solid rgba(0,0,0,0.24)
+    border-radius: 1.5rem
+    box-shadow: 0 0 1px rgba($tertiary-btn-color, .25)
+    padding: 0.8rem 1rem
+    margin-bottom: 0.5rem
+    
+.Btn-entrar:disabled
+    background: rgba(0,0,0,0.8)
 
 
+
+    
 .Input-primary
     border: 1px solid rgba(0,0,0,0.24)
     border-radius: 0.2rem
-    width: 300px
+    width: 100%
 
 .Input-primary:focus
     border: 1px solid rgba(0,0,0,0.24)
@@ -151,6 +166,7 @@
     @include flex-column-center-center
     position: relative
     margin-top: .5rem
+    width: 100%
 
     input
         font-size: $font-size-small
@@ -388,15 +404,59 @@
         margin-top: 1rem
 
     &-container
-        @include flex-column-start-start
+        @include flex-column-start-center
         margin: 1rem 0
         width: 300px
 
         &-title
             margin-bottom: 1rem
+            margin-left: 0
+            width: 100%
 
         .Span-lines-around
             width: 300px
+        
 
     .Span-subscribe
         margin-top: 2rem
+
+
+.Login2
+    @include flex-column-start-center
+    position: absolute
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0
+    margin: auto
+    width: 600px
+    height: 650px
+    background-color: $primary-bg-color
+    border-radius: 1rem
+
+    &-twitter-icon
+        margin-top: 1rem
+
+    &-container
+        @include flex-column-start-center
+        margin: 1rem 0
+        width: 450px
+        height: 500px
+
+        &-title
+            margin-bottom: 1rem
+            margin-left: 0
+            width: 100%
+        
+        .Forget-password
+            color: $tertiary-font-color
+            font-size: $font-size-smaller
+            width: 100%
+            margin-bottom: 15rem
+            cursor: pointer
+
+        .Input-animated
+            margin-top: 1rem
+
+    .Span-subscribe
+        margin: 2rem 0

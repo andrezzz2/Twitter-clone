@@ -9,7 +9,7 @@ export interface ICreateUserRequestDTO{
     password: string;
 }
 //contains the business logic
-export class CreateUser{
+export class CreateUserService{
     //dependency inversion principle, depende apenas da interface e não da implementação dela
     constructor (private usersRepository: IUsersRepository){}
 
@@ -18,6 +18,11 @@ export class CreateUser{
 
         if(userAlreadyExists)
             throw new Error('User already exists!');
+
+        const emailAlreadyExists = await this.usersRepository.findByEmail(data.username);
+
+        if(emailAlreadyExists)
+            throw new Error('Email already exists!');
 
         const user = new User(data);
 

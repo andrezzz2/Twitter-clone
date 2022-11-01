@@ -1,8 +1,8 @@
+import 'dotenv/config';
 import path from 'path';
 import express, { Request, Response, NextFunction } from 'express';
 import {userRouter} from './routes/userRoutes';
-import 'dotenv/config';
-
+const cors = require('cors');
 
 // **** Init express **** //
 const app = express();
@@ -11,10 +11,12 @@ const app = express();
 // **** Set basic express settings **** //
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
+app.use(cors());
 
 
 // **** Add API routes **** //
 app.use('/user', userRouter);
+
 
 // Setup error handler
 app.use((

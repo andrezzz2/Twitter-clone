@@ -1,7 +1,10 @@
 import {FaTwitter,FaGoogle, FaApple} from 'react-icons/fa';
 import Login from '../components/Login';
+import { useState } from 'react';
 
 function FirstPage () {
+
+    const [step, setStep] = useState(1);
 
     function showLoginPage () {
         const el = document.querySelector(".First-page-login-page");
@@ -11,6 +14,7 @@ function FirstPage () {
     function hideLoginPage () {
         const el = document.querySelector(".First-page-login-page");
         el?.classList.add("Hidden");
+        setStep(1);
     }
 
     return (
@@ -80,7 +84,7 @@ function FirstPage () {
 
             <div className='First-page-login-page Hidden'>
                 <div className='First-page-login-page-background' onClick={hideLoginPage}></div>
-                <Login/>
+                <Login step={step} setStep={setStep}/>
             </div>
         </div>
     );

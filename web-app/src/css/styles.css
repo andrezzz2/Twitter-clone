@@ -179,10 +179,26 @@ h2 {
   margin-bottom: 0.5rem;
 }
 
+.Btn-entrar {
+  width: 450px;
+  background: #000000;
+  font-size: 1.2rem;
+  color: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.24);
+  border-radius: 1.5rem;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.25);
+  padding: 0.8rem 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.Btn-entrar:disabled {
+  background: rgba(0, 0, 0, 0.8);
+}
+
 .Input-primary {
   border: 1px solid rgba(0, 0, 0, 0.24);
   border-radius: 0.2rem;
-  width: 300px;
+  width: 100%;
 }
 
 .Input-primary:focus {
@@ -197,6 +213,7 @@ h2 {
   align-items: center;
   position: relative;
   margin-top: 0.5rem;
+  width: 100%;
 }
 .Input-animated input {
   font-size: 1rem;
@@ -463,18 +480,67 @@ h2 {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: flex-start;
+  align-items: center;
   margin: 1rem 0;
   width: 300px;
 }
 .Login-container-title {
   margin-bottom: 1rem;
+  margin-left: 0;
+  width: 100%;
 }
 .Login-container .Span-lines-around {
   width: 300px;
 }
 .Login .Span-subscribe {
   margin-top: 2rem;
+}
+
+.Login2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 600px;
+  height: 650px;
+  background-color: #FFFFFF;
+  border-radius: 1rem;
+}
+.Login2-twitter-icon {
+  margin-top: 1rem;
+}
+.Login2-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 1rem 0;
+  width: 450px;
+  height: 500px;
+}
+.Login2-container-title {
+  margin-bottom: 1rem;
+  margin-left: 0;
+  width: 100%;
+}
+.Login2-container .Forget-password {
+  color: rgb(29, 155, 240);
+  font-size: 0.9rem;
+  width: 100%;
+  margin-bottom: 15rem;
+  cursor: pointer;
+}
+.Login2-container .Input-animated {
+  margin-top: 1rem;
+}
+.Login2 .Span-subscribe {
+  margin: 2rem 0;
 }
 
 .Home-page-flex-row {

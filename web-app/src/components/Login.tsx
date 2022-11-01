@@ -1,58 +1,156 @@
 import {FaTwitter,FaGoogle, FaApple} from 'react-icons/fa';
 
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { newUser } from '../redux/features/userSlice';
+import axios from 'axios';
 
 
-function Login () {
+interface ILoginResponse {
+    message: string
+    user: object | null
+    accessToken: string | null
+}
+
+interface ILoginComponent {
+    step: number
+    setStep: React.Dispatch<React.SetStateAction<number>>
+}
+
+
+function Login ({step, setStep}: ILoginComponent ) {
+
+    const firstInputRef = useRef<HTMLInputElement | null>(null);
+    const secondInputRef = useRef<HTMLInputElement | null>(null);
+
+    const [username, setUsername] = useState<string | null>(null);
+
 
     const dispatch = useDispatch();
 
+    function goToSecondStep () {
+
+        if(firstInputRef.current?.value){
+            setUsername(firstInputRef.current.value);
+            setStep(2);
+        }
+
+    }
+
+    function enablePasswordButton (event: React.ChangeEvent<HTMLInputElement>) {
+        
+        const value = (event.target as HTMLInputElement).value;
+        
+        if(value.length>0){
+            const el = document.getElementsByClassName("Btn-entrar");
+            const el2 = el[0] as HTMLElement;
+            el2.removeAttribute("disabled");
+            el2.onclick = handleLogin;
+        } else {
+            const el = document.getElementsByClassName("Btn-entrar");
+            el[0].setAttribute("disabled", "true");
+        }
+
+    }
+
     function handleLogin(){
-        console.log("trying to log in");
 
-        dispatch(newUser({
-            info: {name: "andre"},
-            accessToken: "brpobmrbep"
-        }));
+        const password = secondInputRef.current?.value;
 
-        localStorage.setItem("x-access-token", "brpobmrbep");
-        localStorage.setItem("info", JSON.stringify({name: "andre"}));
+        if(username && password){
+
+            console.log("fazendo axios post");
+            axios.post('http://localhost:5353/user/login', {username: username, password: password}).then((response)=>{
+
+                const data = response.data as ILoginResponse;
+
+                console.log(data.message);
+
+                if(data.user && data.accessToken){
+
+                    dispatch(newUser({
+                        info: data.user,
+                        accessToken: data.accessToken
+                    }));
+                    localStorage.setItem("info", JSON.stringify(data.user));
+                    localStorage.setItem("x-access-token", data.accessToken);
+
+                } 
+                
+            }).catch(error=>{
+                console.error(error);
+            });
+
+        }
     }   
 
-    return (
-        <div className="Login">
-            <FaTwitter fill="rgb(29, 155, 240)" className="Login-twitter-icon Icon-large"/>
-            
-            <div className='Login-container'>
+    if(step===1)
+        return (
+            <div className="Login">
+                <FaTwitter fill="rgb(29, 155, 240)" className="Login-twitter-icon Icon-large"/>
+                
+                <div className='Login-container'>
 
-                <span className='Login-container-title Span-bold-large'>Entrar no Twitter</span>
-                <div className='btn-primary Btn-login-subscribe-with-google'>
-                    <FaGoogle className="Icon-small"/>
-                    <span className='Span-medium-smaller'>Fazer login com o Google</span>
+                    <span className='Login-container-title Span-bold-large'>Entrar no Twitter</span>
+                    <div className='btn-primary Btn-login-subscribe-with-google'>
+                        <FaGoogle className="Icon-small"/>
+                        <span className='Span-medium-smaller'>Fazer login com o Google</span>
+                    </div>
+                    <div className='btn-primary btn-themed-white-black Btn-login-subscribe-with-apple'>
+                        <FaApple className="Icon-small"/>
+                        <span className='Span-medium-small'>Entrar com Apple</span>
+                    </div>
+                    <div className='Span-lines-around'>
+                        <span className='Span-lines-around-line'></span>
+                        <span>or</span>
+                        <span className='Span-lines-around-line'></span>
+                    </div>
+                    <div className='Input-animated'>
+                        <input ref={firstInputRef} className='Input-primary'/>
+                        <span>Celular, e-mail ou nome de usuário</span>
+                    </div>
+                    <button className='btn-primary btn-themed-black-white Btn-avancar' onClick={goToSecondStep}>Avançar</button>
+                    <button className='btn-primary btn-themed-white-black Btn-esqueceu-a-senha'>Esqueceu a senha?</button>
+
                 </div>
-                <div className='btn-primary btn-themed-white-black Btn-login-subscribe-with-apple'>
-                    <FaApple className="Icon-small"/>
-                    <span className='Span-medium-small'>Entrar com Apple</span>
+
+                <span className='Span-subscribe'>Não tem uma conta? <a href="/">Inscreva-se</a></span>
+                
+            </div>
+        );
+    
+    if(step===2)
+        return (
+
+            <div className="Login2">
+                <FaTwitter fill="rgb(29, 155, 240)" className="Login-twitter-icon Icon-large"/>
+                
+                <div className='Login2-container'>
+
+                    <span className='Login2-container-title Span-bold-large'>Digite sua senha</span>
+                    <div className='Input-animated'>
+                        <input className='Input-primary' disabled/>
+                        <span>{username}</span>
+                    </div>
+                    <div className='Input-animated'>
+                        <input className='Input-primary'
+                               ref={secondInputRef}
+                               onChange={event=>enablePasswordButton(event)}
+                        />
+                        <span>Senha</span>
+                    </div>
+                    <span className='Forget-password'>Esqueceu sua senha?</span>
+                    <button onClick={handleLogin} className='btn-primary Btn-entrar' disabled>Entrar</button>
+
                 </div>
-                <div className='Span-lines-around'>
-                    <span className='Span-lines-around-line'></span>
-                    <span>or</span>
-                    <span className='Span-lines-around-line'></span>
-                </div>
-                <div className='Input-animated'>
-                    <input className='Input-primary'/>
-                    <span>Celular, e-mail ou nome de usuário</span>
-                </div>
-                <button className='btn-primary btn-themed-black-white Btn-avancar' onClick={handleLogin}>Avançar</button>
-                <button className='btn-primary btn-themed-white-black Btn-esqueceu-a-senha'>Esqueceu a senha?</button>
+
+                <span className='Span-subscribe'>Não tem uma conta? <a href="/">Inscreva-se</a></span>
+                
             </div>
 
-            <span className='Span-subscribe'>Não tem uma conta? <a href="/">Inscreva-se</a></span>
-            
-        </div>
-    );
+        );
+    
+    return <></>
 }
 
 export default Login;

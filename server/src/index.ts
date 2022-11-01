@@ -1,7 +1,12 @@
 import './configurations/config.ts';
 import server from './server';
-import './database';
+import { AppDataSource }from './database';
 
-const PORT = process.env.PORT || "3000";
+//connectind with postgres
+AppDataSource.initialize().then(() => {
+    console.log("Connection with DB stablished.");
+}).catch((error) => console.log(error));
 
-server.listen(3000, () => console.log('Express server started on port: ' + PORT));
+const PORT = process.env.PORT || "5353";
+
+server.listen(PORT, () => console.log('Express server started on port: ' + PORT));
