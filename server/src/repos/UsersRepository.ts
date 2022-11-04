@@ -1,6 +1,6 @@
-import { User } from "../../entities/User";
-import { IUsersRepository } from "../IUsersRepository";
-import { AppDataSource } from "../../database";
+import { User } from "../entities/User";
+import { IUsersRepository } from "./IUsersRepository";
+import { AppDataSource } from "../database/postgres";
 
 class PublicUser {
     public firstName!: string
@@ -9,7 +9,7 @@ class PublicUser {
     public bio!: string
 }
 
-export class PostgresUsersRepository implements IUsersRepository{
+export class UsersRepository implements IUsersRepository{
 
     async findByUsername(username: string) : Promise <User | null> {
         const userRepository = AppDataSource.getRepository(User)

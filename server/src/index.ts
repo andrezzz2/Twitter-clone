@@ -1,6 +1,6 @@
 import './configurations/config.ts';
 import server from './server';
-import { AppDataSource }from './database';
+import { AppDataSource } from './database/postgres';
 
 //connectind with postgres
 AppDataSource.initialize().then(() => {

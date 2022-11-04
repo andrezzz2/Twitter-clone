@@ -1,7 +1,7 @@
 import { User } from "../../entities/User";
 import { IUsersRepository } from "../../repos/IUsersRepository";
 
-export interface ICreateUserRequestDTO{
+export interface ICreateUserRequest{
     firstName: string;
     lastName: string;
     username: string;
@@ -13,7 +13,7 @@ export class CreateUserService{
     //dependency inversion principle, depende apenas da interface e não da implementação dela
     constructor (private usersRepository: IUsersRepository){}
 
-    async execute(data: ICreateUserRequestDTO){
+    async execute(data: ICreateUserRequest){
         const userAlreadyExists = await this.usersRepository.findByUsername(data.username);
 
         if(userAlreadyExists)

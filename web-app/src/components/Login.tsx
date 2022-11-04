@@ -23,14 +23,15 @@ function Login ({step, setStep}: ILoginComponent ) {
     const firstInputRef = useRef<HTMLInputElement | null>(null);
     const secondInputRef = useRef<HTMLInputElement | null>(null);
 
-    const [username, setUsername] = useState<string | null>(null);
+    const [username, setUsername] = useState<string>("");
+    const [serverResponse, setServerResponse] = useState<string>("");
 
 
     const dispatch = useDispatch();
 
     function goToSecondStep () {
 
-        if(firstInputRef.current?.value){
+        if(firstInputRef?.current?.value){
             setUsername(firstInputRef.current.value);
             setStep(2);
         }
@@ -63,8 +64,6 @@ function Login ({step, setStep}: ILoginComponent ) {
 
                 const data = response.data as ILoginResponse;
 
-                console.log(data.message);
-
                 if(data.user && data.accessToken){
 
                     dispatch(newUser({
@@ -74,7 +73,21 @@ function Login ({step, setStep}: ILoginComponent ) {
                     localStorage.setItem("info", JSON.stringify(data.user));
                     localStorage.setItem("x-access-token", data.accessToken);
 
-                } 
+                } else {
+                    
+                    setServerResponse(data.message);
+
+                    const el = document.getElementsByClassName("Login2-server-response");
+                    el[0].classList.remove("Hidden");
+
+                    //a mensagem só pode aparecer por 3s
+                    setTimeout(() => {
+                        setServerResponse("");
+                        const el = document.getElementsByClassName("Login2-server-response");
+                        el[0].classList.add("Hidden");
+                    }, 3000);
+
+                }
                 
             }).catch(error=>{
                 console.error(error);
@@ -117,7 +130,7 @@ function Login ({step, setStep}: ILoginComponent ) {
 
                 </div>
 
-                <span className='Span-subscribe'>Não tem uma conta? <a href="/">Inscreva-se</a></span>
+                <span className='Span-subscribe Hidden'>Não tem uma conta? <a href="/">Inscreva-se</a></span>
                 
             </div>
         );
@@ -150,6 +163,8 @@ function Login ({step, setStep}: ILoginComponent ) {
                 </div>
 
                 <span className='Span-subscribe'>Não tem uma conta? <a href="/">Inscreva-se</a></span>
+
+                <span className='Login2-server-response'>{serverResponse}</span>
                 
             </div>
 

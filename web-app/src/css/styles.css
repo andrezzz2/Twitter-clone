@@ -181,18 +181,15 @@ h2 {
 
 .Btn-entrar {
   width: 450px;
-  background: #000000;
   font-size: 1.2rem;
-  color: #FFFFFF;
   border: 1px solid rgba(0, 0, 0, 0.24);
   border-radius: 1.5rem;
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0.25);
   padding: 0.8rem 1rem;
   margin-bottom: 0.5rem;
 }
 
 .Btn-entrar:disabled {
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .Input-primary {
@@ -546,6 +543,131 @@ h2 {
 }
 .Login2 .Span-subscribe {
   margin: 1rem 0 2rem 0;
+}
+.Login2-server-response {
+  position: absolute;
+  top: calc(650px + 1rem);
+  padding: 1rem;
+  background-color: rgb(29, 155, 240);
+  color: #FFFFFF;
+}
+
+.Tweet {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  padding: 1rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+}
+.Tweet-retweet-or-maybe-you-like {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.Tweet .Tweet-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+.Tweet .Tweet-wrapper-user-icon {
+  border-radius: 50%;
+}
+.Tweet .Tweet-wrapper-user-icon:hover {
+  filter: brightness(95%);
+}
+.Tweet .Tweet-wrapper .Tweet-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.Tweet .Tweet-wrapper .Tweet-container-first-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.Tweet .Tweet-wrapper .Tweet-container-first-section-infos .Tweet-nickname:hover {
+  text-decoration: underline;
+}
+.Tweet .Tweet-wrapper .Tweet-container-first-section-infos .Tweet-username {
+  color: rgb(83, 100, 113);
+  margin-right: 0.5rem;
+}
+.Tweet .Tweet-wrapper .Tweet-container-first-section-infos .Tweet-dot {
+  color: rgb(83, 100, 113);
+  width: 0.2rem;
+  heigth: 0.2rem;
+}
+.Tweet .Tweet-wrapper .Tweet-container-first-section-infos .Tweet-date {
+  color: rgb(83, 100, 113);
+  margin-left: 0.5rem;
+}
+.Tweet .Tweet-wrapper .Tweet-container-first-section-infos .Tweet-date:hover {
+  text-decoration: underline;
+}
+.Tweet .Tweet-wrapper .Tweet-container-first-section-more {
+  color: rgb(83, 100, 113);
+  border-radius: 50%;
+  padding: 0.5rem;
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+}
+.Tweet .Tweet-wrapper .Tweet-container-first-section-more:hover {
+  color: rgb(29, 155, 240);
+}
+.Tweet .Tweet-wrapper .Tweet-container .Tweet-text {
+  word-wrap: normal;
+  margin-bottom: 0.5rem;
+}
+.Tweet .Tweet-wrapper .Tweet-container .Tweet-media {
+  max-width: 500px;
+  max-height: 640px;
+  border-radius: 1rem;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.25);
+}
+.Tweet .Tweet-wrapper .Tweet-container-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 0.5rem;
+}
+.Tweet .Tweet-wrapper .Tweet-container-toolbar div:last-child {
+  margin-right: 3rem;
+}
+.Tweet .Tweet-wrapper .Tweet-container-toolbar-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.Tweet .Tweet-wrapper .Tweet-container-toolbar-item-icon {
+  border-radius: 50%;
+  padding: 0.5rem;
+  width: 2rem;
+  height: 2rem;
+}
+.Tweet .Tweet-wrapper .Tweet-container-toolbar-item-comments {
+  font-size: 0.9rem;
+}
+.Tweet .Tweet-wrapper .Tweet-container-toolbar-item-comments:hover {
+  color: rgb(29, 155, 240);
+}
+.Tweet .Tweet-wrapper .Tweet-container-toolbar-item-retweets {
+  font-size: 0.9rem;
+}
+.Tweet .Tweet-wrapper .Tweet-container-toolbar-item-retweets:hover {
+  color: rgb(0, 186, 124);
+}
+.Tweet .Tweet-wrapper .Tweet-container-toolbar-item-likes {
+  font-size: 0.9rem;
+}
+.Tweet .Tweet-wrapper .Tweet-container-toolbar-item-likes:hover {
+  color: rgb(249, 24, 128);
 }
 
 .Home-page-flex-row {
@@ -966,123 +1088,6 @@ h2 {
   background-color: white;
   width: 100%;
 }
-.Home-page-main-content .Primary-column .Tweet {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  width: 100%;
-  padding: 1rem;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-  cursor: pointer;
-}
-.Home-page-main-content .Primary-column .Tweet-retweet-or-maybe-you-like {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
-.Home-page-main-content .Primary-column .Tweet .Tweet-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-}
-.Home-page-main-content .Primary-column .Tweet .Tweet-wrapper-user-icon {
-  border-radius: 50%;
-}
-.Home-page-main-content .Primary-column .Tweet .Tweet-wrapper-user-icon:hover {
-  filter: brightness(95%);
-}
-.Home-page-main-content .Primary-column .Tweet .Tweet-wrapper .Tweet-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-}
-.Home-page-main-content .Primary-column .Tweet .Tweet-wrapper .Tweet-container-first-section {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-}
-.Home-page-main-content .Primary-column .Tweet .Tweet-wrapper .Tweet-container-first-section-infos .Tweet-nickname:hover {
-  text-decoration: underline;
-}
-.Home-page-main-content .Primary-column .Tweet .Tweet-wrapper .Tweet-container-first-section-infos .Tweet-username {
-  color: rgb(83, 100, 113);
-  margin-right: 0.5rem;
-}
-.Home-page-main-content .Primary-column .Tweet .Tweet-wrapper .Tweet-container-first-section-infos .Tweet-dot {
-  color: rgb(83, 100, 113);
-  width: 0.2rem;
-  heigth: 0.2rem;
-}
-.Home-page-main-content .Primary-column .Tweet .Tweet-wrapper .Tweet-container-first-section-infos .Tweet-date {
-  color: rgb(83, 100, 113);
-  margin-left: 0.5rem;
-}
-.Home-page-main-content .Primary-column .Tweet .Tweet-wrapper .Tweet-container-first-section-infos .Tweet-date:hover {
-  text-decoration: underline;
-}
-.Home-page-main-content .Primary-column .Tweet .Tweet-wrapper .Tweet-container-first-section-more {
-  color: rgb(83, 100, 113);
-  border-radius: 50%;
-  padding: 0.5rem;
-  width: 2rem;
-  height: 2rem;
-  cursor: pointer;
-}
-.Home-page-main-content .Primary-column .Tweet .Tweet-wrapper .Tweet-container-first-section-more:hover {
-  color: rgb(29, 155, 240);
-}
-.Home-page-main-content .Primary-column .Tweet .Tweet-wrapper .Tweet-container .Tweet-text {
-  word-wrap: normal;
-  margin-bottom: 0.5rem;
-}
-.Home-page-main-content .Primary-column .Tweet .Tweet-wrapper .Tweet-container .Tweet-media {
-  max-width: 500px;
-  max-height: 640px;
-  border-radius: 1rem;
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0.25);
-}
-.Home-page-main-content .Primary-column .Tweet .Tweet-wrapper .Tweet-container-toolbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  margin-top: 0.5rem;
-}
-.Home-page-main-content .Primary-column .Tweet .Tweet-wrapper .Tweet-container-toolbar div:last-child {
-  margin-right: 3rem;
-}
-.Home-page-main-content .Primary-column .Tweet .Tweet-wrapper .Tweet-container-toolbar-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.Home-page-main-content .Primary-column .Tweet .Tweet-wrapper .Tweet-container-toolbar-item-icon {
-  border-radius: 50%;
-  padding: 0.5rem;
-  width: 2rem;
-  height: 2rem;
-}
-.Home-page-main-content .Primary-column .Tweet .Tweet-wrapper .Tweet-container-toolbar-item-comments {
-  font-size: 0.9rem;
-}
-.Home-page-main-content .Primary-column .Tweet .Tweet-wrapper .Tweet-container-toolbar-item-comments:hover {
-  color: rgb(29, 155, 240);
-}
-.Home-page-main-content .Primary-column .Tweet .Tweet-wrapper .Tweet-container-toolbar-item-retweets {
-  font-size: 0.9rem;
-}
-.Home-page-main-content .Primary-column .Tweet .Tweet-wrapper .Tweet-container-toolbar-item-retweets:hover {
-  color: rgb(0, 186, 124);
-}
-.Home-page-main-content .Primary-column .Tweet .Tweet-wrapper .Tweet-container-toolbar-item-likes {
-  font-size: 0.9rem;
-}
-.Home-page-main-content .Primary-column .Tweet .Tweet-wrapper .Tweet-container-toolbar-item-likes:hover {
-  color: rgb(249, 24, 128);
-}
 .Home-page-main-content .Sidebar-column {
   display: flex;
   flex-direction: column;
@@ -1124,17 +1129,6 @@ h2 {
 .Home-page-main-content .Sidebar-column-who-follow {
   width: 340px;
   heigth: 400px;
-}
-
-.Login-page {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  width: 100%;
-  background-color: #FFFFFF;
-  color: #000000;
 }
 
 /*# sourceMappingURL=styles.css.map */

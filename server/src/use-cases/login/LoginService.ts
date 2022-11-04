@@ -1,6 +1,6 @@
 import { IUsersRepository } from "../../repos/IUsersRepository";
 
-export interface ILoginRequestDTO{
+export interface ILoginRequest{
     username: string;
     password: string;
 }
@@ -9,7 +9,7 @@ export class LoginService{
     //dependency inversion principle, depende apenas da interface e não da implementação dela
     constructor (private usersRepository: IUsersRepository){}
 
-    async execute(data: ILoginRequestDTO){
+    async execute(data: ILoginRequest){
 
         const user = await this.usersRepository.findByUsername(data.username);
 

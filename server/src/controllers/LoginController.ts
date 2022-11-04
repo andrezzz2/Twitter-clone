@@ -1,10 +1,10 @@
 import { Request, Response } from 'express';
 import { LoginService } from '../use-cases/login/LoginService';
-import { PostgresUsersRepository } from "../repos/implementations/PostgresUsersRepository";
+import { UsersRepository } from "../repos/UsersRepository";
 import sessionController from '../sessionController';
 
-const postgresUsersRepository = new PostgresUsersRepository();
-const loginService = new LoginService(postgresUsersRepository);
+const usersRepository = new UsersRepository();
+const loginService = new LoginService(usersRepository);
 
 //receive a request, calls the use-case, then send back a response
 export default new class LoginController{
